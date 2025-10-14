@@ -24,5 +24,7 @@ urlpatterns = [
 
     path('index1/', views.load_index1),
 
-    path('load2/',views.loading)
+    path('load2/',views.loading),
+
+    path('js/',views.index2)
 ]

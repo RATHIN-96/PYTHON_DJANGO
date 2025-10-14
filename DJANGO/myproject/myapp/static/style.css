@@ -1,0 +1,21 @@
+h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 50px;
+}
+
+
+
+.one{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    align-items: center;
+    margin-left: 550px;
+    
+}
+.one:hover{
+    background-color: red;
+    color: rgb(0, 0, 0);
+    
+}
