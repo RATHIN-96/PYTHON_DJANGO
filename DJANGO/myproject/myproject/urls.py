@@ -26,5 +26,9 @@ urlpatterns = [
 
     path('load2/',views.loading),
 
-    path('js/',views.index2)
+    path('js/',views.index2),
+
+    path('stud/',views.stud_reg),
+    
+    path('emp/',views.emp_reg),
 ]

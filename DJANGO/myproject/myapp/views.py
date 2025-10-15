@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-
+from myapp.forms import StudForm,EmpForm
 # Create your views here.
 def first(request):
     return HttpResponse('Welcome To Django ...')
@@ -25,5 +25,13 @@ def loading(request):
 def  index2 (request):
     return render(request,'index2.html')
 
+def stud_reg(request):
+    stud=StudForm
+    return render(request,'stud.html',{'stud':stud})
+
+
+def emp_reg(request):
+    emp=EmpForm()
+    return render (request,'emp.html',{'emp':emp})
     
 
