@@ -21,6 +21,12 @@ from Newapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('first/',views.first),
-    path('second/',views.second)
+    path('second/',views.second),
+    path('loading/',views.load_index),
+    path('loa/',views.index),
+    path('sp/',views.why),
+    path('t1/',views.two),
+    path('form/',views.stud_reg),
+    path('emp/',views.emp_reg),
 
 ]
