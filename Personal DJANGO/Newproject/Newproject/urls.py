@@ -28,5 +28,7 @@ urlpatterns = [
     path('t1/',views.two),
     path('form/',views.stud_reg),
     path('emp/',views.emp_reg),
+    path('up/',views.upload),
+
 
 ]

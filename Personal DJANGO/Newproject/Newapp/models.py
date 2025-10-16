@@ -19,3 +19,9 @@ class employee (models.Model):
     number=models.IntegerField()
     class Meta:
         db_table='EMPLOYEE DATA'
+
+class File_Upload(models.Model):
+    name = models.CharField(max_length=30)
+    photo = models.ImageField(upload_to='Uploads/')
+    class Meta:
+        db_table='UPLOADS'
