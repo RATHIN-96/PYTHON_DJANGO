@@ -12,9 +12,9 @@ class EmpForm(forms.ModelForm):
     class Meta:
         model=Employee
     
-        # fields = '__all__'
+        fields = '__all__'
 
         # fields = ['age','first_name']
 
-        exclude=['age']
+        # exclude=['age']
       

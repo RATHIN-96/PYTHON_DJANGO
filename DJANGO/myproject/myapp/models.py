@@ -16,3 +16,6 @@ class Employee(models.Model):
     place=models.CharField(max_length=50)
     age=models.IntegerField()
     
+class File_Upload(models.Model):
+    name = models.CharField(max_length=40)
+    photo = models.ImageField(upload_to='uploads/')

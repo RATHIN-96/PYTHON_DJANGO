@@ -31,4 +31,6 @@ urlpatterns = [
     path('stud/',views.stud_reg),
     
     path('emp/',views.emp_reg),
+
+    path('file/',views.file_up)
 ]

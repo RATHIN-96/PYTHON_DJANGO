@@ -9,7 +9,19 @@
     
     <h1>Employee Registration</h1>
 
-    {{ emp.as_p }}
+    <form action="" method="post">
+
+        {% csrf_token %}
+
+        <h1> {{ emp.as_p }} </h1>
+
+       
+        <input type="submit" value="Submit">
+
+
+
+
+    </form>
 
 </body>
 </html>
