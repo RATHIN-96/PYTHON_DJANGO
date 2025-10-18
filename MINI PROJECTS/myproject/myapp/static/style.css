@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.lo{
+    padding: 10px;
+    margin-left: 220px;
+    text-align: center;
+    justify-content: center;
+}
