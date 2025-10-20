@@ -19,3 +19,12 @@ class Employee(models.Model):
 class File_Upload(models.Model):
     name = models.CharField(max_length=40)
     photo = models.ImageField(upload_to='uploads/')
+    class Meta:
+        db_table='FILE UPLOAD'
+
+class Teacher(models.Model):
+     first_name=models.CharField(max_length=30)
+     last_name=models.CharField(max_length=30)
+     age=models.IntegerField()
+     email=models.EmailField(max_length=50)
+    

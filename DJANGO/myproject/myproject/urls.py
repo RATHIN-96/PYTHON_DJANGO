@@ -32,5 +32,23 @@ urlpatterns = [
     
     path('emp/',views.emp_reg),
 
-    path('file/',views.file_up)
+    path('file/',views.file_up),
+
+
+    path('create_s/',views.create_s),
+
+    path('get_s/',views.get_s),
+
+    path('del/',views.del_s),
+
+    path('set_cookie/',views.set_cookie),
+    path('get_cookie/',views.get_cookie),
+
+    path('treg/',views.teach_reg),
+    path('tview/',views.teach_view),
+
+    path('del/<int:i>',views.del_teacher),
+    path('update/<int:i>',views.up_teach),
+
+
 ]

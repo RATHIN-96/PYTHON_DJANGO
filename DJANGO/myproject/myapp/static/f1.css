@@ -12,11 +12,11 @@ body{
 
 .di{
     height:160px;
-    width: 250px;
+    width: 400%;
     margin-left: 500px;
     margin-top: 200px;
     background-color: #00f5fa;
-    border-radius: 0px 20px;
+    border-radius: 10px 20px;
     box-shadow: 3px 3px 6px black;
 }
 
