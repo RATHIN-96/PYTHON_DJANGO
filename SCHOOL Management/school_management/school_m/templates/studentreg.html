@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+     <style>
+        body{
+            background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+        }
+        .container{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            
+            background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+        
+        }
+        .container input {
+            border-radius: 7px;
+            
+        }
+        .foot{
+            background-color: black;
+            width: 100%;
+            height: 60px;
+        }
+        h1{
+            padding: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: rgba(255, 228, 196, 0.881);
+            text-shadow: 1px 1px 3px rgb(255, 255, 255);
+        }
+     </style>
+
+</head>
+<body>
+
+      <h1>Student Registration</h1>
+
+    <div class="container">
+        
+        <form action="" class="form-contol" method="post">
+            {% csrf_token %}
+            <br>
+
+            <label for="">FIRST NAME</label><br>
+            <input type="text" name="fname" class="form-contol"><br>
+
+            <label for="">LAST NAME</label><br>
+            <input type="text" name="lname" class="form-contol"><br>
+
+            <label for="">AGE</label><br>
+            <input type="number" name="age" class="form-contol"><br>
+
+            <label for="">EMAIL</label><br>
+            <input type="email" name="email" class="form-contol"><br>
+
+            <label for="">PHONE NUMBER</label><br>
+            <input type="number" name="phone" class="form-contol"><br>
+
+            <label for="">USER NAME</label><br>
+            <input type="text" name="uname" class="form-contol"><br>
+
+            <label for="">PASSWORD</label><br>
+            <input type="password" name="pswd" class="form-contol"><br>
+
+            <label for="">SELECT DEPARTMENT</label>
+            <select name="depart" id="" class="form-select">
+                {% for i in dep %}
+                    
+                    <option value="{{ i.id }}">{{ i.department_name }}</option>
+                {% endfor %}
+            </select>
+        <input type="submit" value="SUBMIT" class="btn btn-info m-2">
+        </form>
+    </div>
+    <footer >
+
+        <div class="foot"></div>
+
+    </footer>
+    
+</body>
+</html>
