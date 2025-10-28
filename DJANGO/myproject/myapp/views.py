@@ -2,10 +2,17 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
 from django.template import loader
 from myapp.forms import StudForm,EmpForm
+from django.views.generic import CreateView,ListView,DetailView,UpdateView,DeleteView
+from django.urls import reverse_lazy
 from myapp.models import *
+from .models import Stud
+
 # Create your views here.
 def first(request):
     return HttpResponse('Welcome To Django ...')
+
+def second(request):
+    return HttpResponse('Welcome  ...')
 
 def load_index1(request):
     temp=loader.get_template('index1.html')
@@ -117,3 +124,64 @@ def up_teach(request,i):
         teacher.email = request.POST['email']
         teacher.save()
         return redirect(teach_view)
+
+
+
+
+
+# class StudentCreate(CreateView):
+#     model = Stud
+#     fields = ['name', 'age']
+#     template_name = 'studentform.html'
+#     success_url = reverse_lazy('studview')
+
+
+
+
+# class StudentViews(ListView):
+#     model = Stud
+#     template_name = 'stusdview.html'  
+   
+
+
+# class StudentDetail(DetailView):
+#     model = Stud
+#     template_name = 'studDetals.html'
+
+
+
+# class StudentUpdate(UpdateView):
+#     model = Stud
+#     template_name = 'studentform.html'
+#     success_url = reverse_lazy('stusdview')
+
+# class StudentDelete(DeleteView):
+#     model = Stud
+#     template_name = 'studdel.html'
+#     success_url = reverse_lazy('studview')
+
+
+class StudentCreate(CreateView):
+    model = Stud
+    fields = ['name', 'age']
+    template_name = 'studentform.html'
+    success_url = reverse_lazy('studview')
+
+class StudentViews(ListView):
+    model = Stud
+    template_name = 'stusdview.html'
+
+class StudentDetail(DetailView):
+    model = Stud
+    template_name = 'studDetals.html'
+
+class StudentUpdate(UpdateView):
+    model = Stud
+    fields = ['name', 'age']
+    template_name = 'studentform.html'
+    success_url = reverse_lazy('studview')
+
+class StudentDelete(DeleteView):
+    model = Stud
+    template_name = 'studdel.html'
+    success_url = reverse_lazy('studview')

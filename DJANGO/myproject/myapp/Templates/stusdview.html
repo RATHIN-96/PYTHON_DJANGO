@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+<h1>Student List</h1>
+
+<ul>
+   {% for i in object_list %}
+     <li>
+        {{ i.name }} - {{ i.age }}
+        | <button><a href="{% url 'detail' i.id %}">View</a></button>
+        | <button><a href="{% url 'update' i.id %}">Edit</a></button>
+        | <button><a href="{% url 'delete' i.id %}">Delete</a></button>
+     </li>
+  {% endfor %}
+</ul>
+
+<button><a href="{% url 'studentcreate' %}">Add another student</a></button>
+</body>
+</html>

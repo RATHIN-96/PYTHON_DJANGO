@@ -28,3 +28,9 @@ class Teacher(models.Model):
      age=models.IntegerField()
      email=models.EmailField(max_length=50)
     
+class Stud(models.Model):
+    name=models.CharField(max_length=30)
+    age=models.IntegerField()
+
+    def __str__(self):
+        return self.name
