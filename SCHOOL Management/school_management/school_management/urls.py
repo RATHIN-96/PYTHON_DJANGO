@@ -26,6 +26,16 @@ urlpatterns = [
     path('studentreg/', views.studentReg),
     path('', views.home),
     path('studentview/', views.student_view),
+    path('stud_approve/<int:id>', views.student_approve),
+    path('stud_del/<int:id>', views.student_reject),
+    path('login/', views.loginData),
+    path('logout/', views.lgout),
+    path('studedit/', views.stud_edit),
+    path('studupdate/<int:ids>', views.stud_update),
+
+
+
+
 
 
 ]

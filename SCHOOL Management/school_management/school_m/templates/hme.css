@@ -11,8 +11,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 160vh;
-  
+  height: 120vh;
 
 }
 
@@ -27,8 +26,7 @@ button a{
 }
 .container{
  
-  
-  margin-top: 30px;
+  margin-top: 40px;
   font-family: "Bungee", sans-serif;
   font-weight: 400;
   text-shadow: 2px 2px 4px rgb(255, 255, 255);
@@ -41,18 +39,18 @@ button a{
     margin-top: 40px;
     justify-content: center;
     margin-bottom: 100px;     
-    gap: 80px;   
-    margin-top: 96vh;
+    gap: 40px;   
+    margin-top: 66vh;
      
 }
 button{
     height: 130px;
     width: 160px;
     box-shadow: 2px 2px 4px  black;
-    transition: transform 0.1s  ease-in-out;
+    transition: transform 0.5s  ease-in-out;
 }
  button:hover {
-      transform:translateY(-20%) ;
+      transform:translateY(-15%) ;
     }
 .fa-solid {
     font-size: 60px;

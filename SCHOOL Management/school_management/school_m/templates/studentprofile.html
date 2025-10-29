@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROFILE</h1>
+    <div class="container">
+        <form action="/studupdate/{{stud.id}}" class="form-contol" method="post">
+
+            {% csrf_token %}
+
+            <br>
+
+            <label for="">FIRST NAME</label><br>
+            <input type="text" name="fname" class="form-contol" value="{{user.first_name}}"><br>
+
+            <label for="">LAST NAME</label><br>
+            <input type="text" name="lname" class="form-contol" value="{{user.last_name}}"><br>
+
+            <label for="">AGE</label><br>
+            <input type="number" name="age" class="form-contol" value="{{stud.age}}"><br>
+
+            <label for="">EMAIL</label><br>
+            <input type="email" name="email" class="form-contol" value="{{user.email}}"><br>
+
+            <label for="">PHONE NUMBER</label><br>
+            <input type="number" name="phone" class="form-contol" value="{{stud.phone}}"><br>
+
+            
+        <input type="submit" value="UPADATE" class="btn btn-info m-2">
+        </form>
+        <button><a href="/logout/">LOGOUT</a></button>
+    </div>
+</body>
+</html>
