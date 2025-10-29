@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
 from django.template import loader
 from myapp.models  import *
 
@@ -22,4 +23,10 @@ def view(request):
     data=Leader.objects.all()
     print(data)
     return render(request,'table.html',{'data':data})
+
+def del_teacher(request , i):
+    data = Leader.objects.get(id =i)
+    data.delete()
+    return HttpResponse("<script>window.alert (Sucessfully Deleted); window.location.href='/vie/';</script>")
+
 

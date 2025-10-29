@@ -56,19 +56,36 @@ def studentReg(request):
         stud_data.save()
         return render(request,'home.html')
     
+# def student_view(request):
+#     data= Student1.objects.all()
+#     return render(request,'studentview.html',{'data':data})   
+
 def student_view(request):
-    data= Student1.objects.all()
-    return render(request,'studentview.html',{'data':data})   
+    data = Student1.objects.filter(stud_id__is_active=False)  
+    return render(request, 'studentview.html', {'data': data})
 
-def student_approve(request,id):
-    stud = Student1.objects.get(id=id)
-    stud.stud_id.is_active = True
-    stud.stud_id.save()
-    return redirect(student_view)
+def stud_approve(request, id):
+    student =Student1.objects.get(id=id)
+    user = student.stud_id
+    user.is_active = True
+    user.save()
+    student.delete()
 
-# def stud_appro(request,id):
+    return redirect('studentview')
+
+# def student_approve(request,id):
+#     stud = Student1.objects.get(id=id)
+#     stud.stud_id.is_active = True
+#     stud.stud_id.save()
+#     # return redirect(student_view)
+#     return HttpResponse('success')
 
 
+
+def department_reject(request, id):
+    department = Department.objects.get(id=id)
+    department.delete()
+    return redirect(view_dep)
 
 def student_reject(request,id):
     stud = Student1.objects.filter(id=id)

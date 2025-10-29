@@ -8,6 +8,11 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+      
+      <!-- icon cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
       <style>
         .table{
             margin: 30px;
@@ -16,16 +21,24 @@
             text-align: center;
             
         }
+        .ri-delete-bin-fill:hover{
+            color: red;
+        }
+         .ri-checkbox-circle-line,.ri-delete-bin-fill{
+            font-size: 25px;
+        }
       </style>
 </head>
 <body>
     <table class="table table-bordered table-primary">
         <tr>
             <th>Department Name</th>
+            <th></th>
         </tr>
         {% for i in data %}
           <tr>
             <td>{{ i.department_name}}</td>
+            <td><a href="/dep_del/{{i.id}}" class="btn" onclick="confirm('Are You Sure Want To Delete  ')"><i class="ri-delete-bin-fill"></i></a></td>
           </tr>
         {% endfor %}
     </table>

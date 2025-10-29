@@ -21,5 +21,6 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cre/',views.register),
-    path('vie/',views.view)
+    path('vie/',views.view),
+    path('dele/<int:i>',views.del_teacher)
 ]

@@ -4,24 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    {% load static %}
+    
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-      <style>
-        button a{
-            text-decoration: none;
-        }
-      </style>
+      
+     <!-- css -->
+      <!-- <link rel="stylesheet" href="{% static 'hme.css' %}"> -->
+      
+      <!-- icon -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+     <!-- css -->
+      <link rel="stylesheet" href="{% static 'add.css' %}">
 </head>
 <body>
 
     <div class="container">
-        <h1>ADMIN</h1>
-        <button class="btn btn-warning "><a href="/add_dpt"  class="">Add Department</a></button>
-        <button class="btn btn-warning "><a href="/view_dpt"  class="">View Department</a></button>
-        <button style="background-color: #00b3ff;" class="btn  "><i class="fa-solid fa-graduation-cap"></i><br><a href="/studentview/">Student View</a></button>
-        <button style="background-color: #ff0202;" class="btn  "><i class="ri-book-3-fill"></i><br><a href="//">Teacher View</a></button>
+        <h1>ADMINITERATOR DASHBOARD</h1>
+
+    </div>
+    <div class="con">
+       <button style="background-color: #3ede2f;"  class="btn  "><i class="ri-menu-add-fill"></i><br><a href="/add_dpt"  class="">Add Department</a></button>
+
+        <button style="background-color: #eadd28;"  class="btn  "><i class="ri-search-eye-fill"></i><br><a href="/view_dpt"  class="">View Department</a></button>
+
+        <button style="background-color: #2ab3ed;" class="btn  "><i class="fa-solid fa-graduation-cap"></i><br><a href="/studentview/">Student View</a></button>
+        <button style="background-color: rgb(232, 33, 33);" class="btn  "><i class="ri-book-3-fill"></i><br><a href="//">Teacher View</a></button>
 
     </div>
     

@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>view</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>table</h1>
-    <table border="6px" style="width: 50%;">
+    <h1>User Details</h1>
+
+    <table class="table table-striped" border="5px">
         <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Place</th>
+            <th>First name</th>
+            <th>Last name</th>
             <th>Age</th>
-            <th>Number</th>
+            <th>Email</th>
         </tr>
         {% for i in data %}
-           <tr>
-            <td>{{ i.name }}</td>
-            <td>{{ i.email }}</td>
-            <td>{{ i.place }}</td>
-            <td>{{ i.age }}</td>
-            <td>{{ i.number }}</td>
-           </tr>
+
+          <tr>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td><a href="/del/{{i.id}}" class="btn btn-danger">Delete</a></td>
+            <td><a href="/update/{{i.id}}" class="btn btn-primary">View Profile</a></td>
+          </tr>
         {% endfor %}
     </table>
-
+    
 </body>
 </html>
