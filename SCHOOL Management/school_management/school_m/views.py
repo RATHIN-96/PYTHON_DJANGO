@@ -54,6 +54,7 @@ def studentReg(request):
                                             department_id_id = d,
                                             stud_id_id = user_data.id)
         stud_data.save()
+        
         return render(request,'home.html')
     
 # def student_view(request):
@@ -69,7 +70,7 @@ def stud_approve(request, id):
     user = student.stud_id
     user.is_active = True
     user.save()
-    student.delete()
+    
 
     return redirect('studentview')
 
@@ -107,6 +108,10 @@ def loginData(request):
             auth_login(request,user)
             request.session['studid'] = user.id
             return render(request,'studentprofile.html')
+        elif user is not None and user.is_superuser ==True:
+            auth_login(request,user)
+            request.session['adminid'] = user.id
+            return render(request,'admin.html')
         else:
             return render(request,'login.html')
 
@@ -117,10 +122,10 @@ def lgout(request):
 def stud_edit(request):
     if request.method == 'GET':
         stud = request.session.get('studid')
-        print('session id................................: ',stud)
+        print('session id.......................................hello: ',stud)
         userdata=User.objects.get(id=stud)
-        data=Student1.objects.get(stud_id=userdata)
-        return render(request,'studentprofile.html',{'stud':data,'user':userdata})
+        data=Student1.objects.get(stud_id=userdata.id)
+        return render(request,'studentedit.html',{'stud':data,'user':userdata})
 
 def stud_update(request,ids):
     stud =Student1.objects.get(id=ids)
