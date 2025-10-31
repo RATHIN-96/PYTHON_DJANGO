@@ -11,7 +11,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 160vh;
+  height: 100vh;
   
 
 }
@@ -42,7 +42,7 @@ button a{
     justify-content: center;
     margin-bottom: 100px;     
     gap: 80px;   
-    margin-top: 96vh;
+    margin-top: 66vh;
      
 }
 button{

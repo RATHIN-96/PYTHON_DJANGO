@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- icon cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <style>
+        .ri-checkbox-circle-line,.ri-delete-bin-fill{
+            font-size: 25px;
+        }
+        .ri-checkbox-circle-line:hover{
+            color: rgb(0, 216, 0);
+            
+        }
+        .ri-delete-bin-fill:hover{
+            color: red;
+        }
+        .container{
+           
+            text-align: center;
+            margin-top: 30px;
+            
+        }
+      </style>
+</head>
+<body style="text-align: center; padding: 10px;">
+<h1>TEACHER DETAILS</h1>
+    <div class="container">
+        <table class="table table-info table-bordered table-hover">
+            <tr>
+                <td>FIRST NAME</td>
+                <td>LAST NAME</td>
+                <td>AGE</td>
+                <td>EMAIL</td>
+                <td>PHONE NUMBER</td>
+                <td>DEPARTMENT</td>
+                
+            </tr>
+            {% for i in data %}
+              <tr>
+                
+                <td>{{i.teacher_id.first_name}}</td>
+                <td>{{i.teacher_id.last_name}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.teacher_id.email}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.department_id.department_name}}</td>
+                
+
+              </tr>
+            {% endfor %}
+            
+        </table>
+        <button class="btn btn-info" style="margin-left: 0px;"><a href="/addmin/"></a>Back</button>
+    </div>
+    
+</body>
+</html>

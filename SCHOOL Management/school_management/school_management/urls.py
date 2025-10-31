@@ -33,6 +33,10 @@ urlpatterns = [
     path('logout/', views.lgout),
     path('studedit/', views.stud_edit),
     path('studupdate/<int:ids>', views.stud_update),
+    path('teacherreg/', views.teacherReg),
+    path('teacherview/', views.teacher_view, ),
+
+
 
 
 
