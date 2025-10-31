@@ -72,6 +72,13 @@
             <label for="">PASSWORD</label><br>
             <input type="password" name="pswd" class="form-contol"><br>
 
+            <label for="">SELECT TYPE</label><br>
+            
+            <select name="select" id="">
+                <option value="STUDENT">STUDENT</option>
+                <option value="TEACHER">TEACHER</option>
+            </select>
+
             <label for="">SELECT DEPARTMENT</label>
             <select name="depart" id="" class="form-select">
                 {% for i in dep %}

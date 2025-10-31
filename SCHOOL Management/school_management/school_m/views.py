@@ -41,20 +41,31 @@ def studentReg(request):
         u = request.POST['uname']
         p = request.POST['pswd']
         d = request.POST['depart']
+        ut = request.POST['select']
         user_data =User.objects.create_user(first_name = f,
                                        last_name = l,
                                        email = e,
-                                       user_type='STUDENT',
+                                       user_type=ut,
                                        username = u,
                                        password = p,
-                                       is_active = False)
+                                       is_active = False )
         user_data.save()
-        stud_data = Student1.objects.create(age = a,
-                                            phone = ph,
-                                            department_id_id = d,
-                                            stud_id_id = user_data.id)
-        stud_data.save()
-        
+        if ut == 'STUDENT':
+            stud_data=Student1.objects.create(
+                age=a,
+                phone=ph,
+                department_id_id=d,
+                stud_id_id=user_data.id
+            )
+            stud_data.save()
+        elif ut == 'TEACHER':
+            teach_data=Teacher1.objects.create(
+                age=a,
+                phone=ph,
+                department_id_id=d,
+                teacher_id_id=user_data.id
+            )
+            teach_data.save()
         return render(request,'home.html')
     
 # def student_view(request):
@@ -70,8 +81,6 @@ def stud_approve(request, id):
     user = student.stud_id
     user.is_active = True
     user.save()
-    
-
     return redirect('studentview')
 
 # def student_approve(request,id):
@@ -141,35 +150,6 @@ def stud_update(request,ids):
     return redirect('/studedit/')
 
 # teacher
-
-def teacherReg(request):
-    if request.method == 'GET':
-        dep = Department.objects.all()
-        return render(request,'teacherreg.html',{'dep':dep})
-    else:
-        f = request.POST['fname']
-        l = request.POST['lname']
-        a = request.POST['age']
-        e = request.POST['email']
-        ph = request.POST['phone']
-        u = request.POST['uname']
-        p = request.POST['pswd']
-        d = request.POST['depart']
-        user_data =User.objects.create_user(first_name = f,
-                                       last_name = l,
-                                       email = e,
-                                       user_type='TEACHER',
-                                       username = u,
-                                       password = p,
-                                       is_active = True)
-        user_data.save()
-        teacher_data = Teacher1.objects.create(age = a,
-                                            phone = ph,
-                                            department_id_id = d,
-                                            teacher_id_id = user_data.id)
-        teacher_data.save()
-        
-        return render(request,'home.html')
 
 def teacher_view(request):
     data= Teacher1.objects.all()
