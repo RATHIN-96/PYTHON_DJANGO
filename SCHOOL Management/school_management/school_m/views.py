@@ -12,6 +12,9 @@ def admin(request):
 def home(request):
     return render (request,'home.html')
 
+# def index(request):
+#     return render (request,'home.html')
+
 def add_dept(request):
     if request.method == 'GET':
         return render(request,'add_department.html')
@@ -28,7 +31,7 @@ def view_dep(request):
     return render(request,'depart.html',{'data':data})
 
 
-def studentReg(request):
+def Registration(request):
     if request.method == 'GET':
         dep = Department.objects.all()
         return render(request,'studentreg.html',{'dep':dep})
@@ -68,9 +71,7 @@ def studentReg(request):
             teach_data.save()
         return render(request,'home.html')
     
-# def student_view(request):
-#     data= Student1.objects.all()
-#     return render(request,'studentview.html',{'data':data})   
+
 
 def student_view(request):
     data = Student1.objects.filter(stud_id__is_active=False)  
@@ -82,14 +83,6 @@ def stud_approve(request, id):
     user.is_active = True
     user.save()
     return redirect('studentview')
-
-# def student_approve(request,id):
-#     stud = Student1.objects.get(id=id)
-#     stud.stud_id.is_active = True
-#     stud.stud_id.save()
-#     # return redirect(student_view)
-#     return HttpResponse('success')
-
 
 
 def department_reject(request, id):
@@ -154,3 +147,16 @@ def stud_update(request,ids):
 def teacher_view(request):
     data= Teacher1.objects.all()
     return render(request,'teacherview.html',{'data':data}) 
+
+
+
+# def student_view(request):
+#     data= Student1.objects.all()
+#     return render(request,'studentview.html',{'data':data})   
+
+# def student_approve(request,id):
+#     stud = Student1.objects.get(id=id)
+#     stud.stud_id.is_active = True
+#     stud.stud_id.save()
+#     # return redirect(student_view)
+#     return HttpResponse('success')

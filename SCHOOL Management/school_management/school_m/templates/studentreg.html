@@ -43,7 +43,7 @@
 </head>
 <body>
 
-      <h1>Student Registration</h1>
+      <h1> Registration</h1>
 
     <div class="container">
         
@@ -74,10 +74,13 @@
 
             <label for="">SELECT TYPE</label><br>
             
-            <select name="select" id="">
-                <option value="STUDENT">STUDENT</option>
+            <select name="select" id="" required>
+                <option value="">SELECT</option>
                 <option value="TEACHER">TEACHER</option>
+                <option value="STUDENT">STUDENT</option>
+                
             </select>
+            <br>
 
             <label for="">SELECT DEPARTMENT</label>
             <select name="depart" id="" class="form-select">
@@ -86,7 +89,7 @@
                     <option value="{{ i.id }}">{{ i.department_name }}</option>
                 {% endfor %}
             </select>
-        <input type="submit" value="SUBMIT" class="btn btn-info m-2">
+        <input type="submit" value="SUBMIT" class="btn btn-info m-2"> <a href="/hm" class="btn btn-info">Back</a>
         </form>
     </div>
     <footer >

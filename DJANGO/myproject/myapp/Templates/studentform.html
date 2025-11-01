@@ -9,9 +9,11 @@
     <h1>{{ view.object.pk|yesno:"Update Student,Add Student" }}</h1>
 
     <form method="post">
+
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>
+        
     </form>
 
     <button><a href="{% url 'studview' %}">Back to list</a></button>

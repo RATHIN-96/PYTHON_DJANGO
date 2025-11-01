@@ -24,8 +24,9 @@ urlpatterns = [
     path('add_dpt/', views.add_dept),
     path('view_dpt/', views.view_dep),
     path('dep_del/<int:id>/', views.department_reject),
-    path('studentreg/', views.studentReg),
+    path('registration/', views.Registration),
     path('', views.home),
+    path('hm', views.home),
     path('stud_approve/<int:id>/', views.stud_approve, name='stud_approve'),
     path('studentview/', views.student_view, name='studentview'),
     path('stud_del/<int:id>', views.student_reject),
@@ -33,7 +34,6 @@ urlpatterns = [
     path('logout/', views.lgout),
     path('studedit/', views.stud_edit),
     path('studupdate/<int:ids>', views.stud_update),
-    path('teacherreg/', views.teacherReg),
     path('teacherview/', views.teacher_view, ),
 
 

@@ -1,0 +1,14 @@
+body{
+    background-color: #f1d8d8;
+}
+
+form{
+    margin-left: 300px;
+    margin-top: 40px;
+    
+}
+form input{
+
+    border-radius: 8px;
+
+}
