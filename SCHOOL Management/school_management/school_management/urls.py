@@ -29,12 +29,17 @@ urlpatterns = [
     path('hm', views.home),
     path('stud_approve/<int:id>/', views.stud_approve, name='stud_approve'),
     path('studentview/', views.student_view, name='studentview'),
+    
+    path('studentDetails/', views.student_details, ),
+
     path('stud_del/<int:id>', views.student_reject),
     path('login/', views.loginData),
     path('logout/', views.lgout),
     path('studedit/', views.stud_edit),
     path('studupdate/<int:ids>', views.stud_update),
     path('teacherview/', views.teacher_view, ),
+    path('teachedit/', views.teach_edit),
+    path('teachupdate/<int:idp>', views.teach_update),
 
 
 

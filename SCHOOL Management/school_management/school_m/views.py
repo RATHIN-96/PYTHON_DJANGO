@@ -77,6 +77,11 @@ def student_view(request):
     data = Student1.objects.filter(stud_id__is_active=False)  
     return render(request, 'studentview.html', {'data': data})
 
+def student_details(request):
+    data= Student1.objects.filter(stud_id__is_active=True)
+    return render(request,'student_details.html',{'data':data}) 
+
+
 def stud_approve(request, id):
     student =Student1.objects.get(id=id)
     user = student.stud_id
@@ -114,6 +119,10 @@ def loginData(request):
             auth_login(request,user)
             request.session['adminid'] = user.id
             return render(request,'admin.html')
+        elif user is not None and user.user_type == 'TEACHER' and user.is_active==True:
+            auth_login(request,user)
+            request.session['teachid'] = user.id
+            return render(request,'teacherprofile.html')
         else:
             return render(request,'login.html')
 
@@ -147,6 +156,28 @@ def stud_update(request,ids):
 def teacher_view(request):
     data= Teacher1.objects.all()
     return render(request,'teacherview.html',{'data':data}) 
+
+def teach_edit(request):
+    if request.method == 'GET':
+        teach = request.session.get('teachid')
+        print('session id.......................................hello: ',teach)
+        userdata=User.objects.get(id=teach)
+        data=Teacher1.objects.get(teacher_id=userdata.id)
+        return render(request,'teacheredit.html',{'teach':data,'user':userdata})
+    
+
+def teach_update(request,idp):
+    teach =Teacher1.objects.get(id=idp)
+    sid = teach.teacher_id
+    user=User.objects.get(id=sid.id)
+    user.first_name=request.POST['fname']
+    user.last_name=request.POST['lname']
+    user.email=request.POST['email']
+    teach.age=request.POST['age']
+    teach.phone=request.POST['phone']
+    user.save()
+    teach.save()
+    return redirect('/teachedit/')
 
 
 
